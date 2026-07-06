@@ -126,7 +126,7 @@ Unlike the notebook, the dashboard always fetches live data. Reproducibility onl
 | Course | Concepts applied here |
 |---|---|
 | Statistics | Descriptive statistics, confidence intervals (basis for Section 4 bootstrap) |
-| Stochastic Modelling | Daily returns treated as an independent stochastic process — the assumption behind annualizing risk with √252 |
+| Stochastic Modelling | Daily returns treated as an independent stochastic process |
 | Statistical Data Analysis | KDE, bootstrap resampling, skewness/kurtosis, correlation matrix |
 | Probability Theory | Binomial distributions, covariance/regression (beta) |
 | Project Big Data | sklearn Pipeline, Ridge regression, cross-validation |
