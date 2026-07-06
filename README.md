@@ -3,6 +3,7 @@
 Personal exploratory and statistical analysis of a real stock portfolio. Covering price behavior, risk metrics, and portfolio-level performance using Python.
 
 **Author:** Floris Schulmaijer
+
 **Data snapshot:** July 6, 2026
 
 ---
