@@ -10,9 +10,9 @@ Personal exploratory and statistical analysis of a real stock portfolio. Coverin
 
 ## About This Project
 
-This project combines a personal interest in investing and quantitative analysis with statistics, probability theory, and Python skills built through a mix of formal coursework (Business Analytics degree, VU Amsterdam, currently in the second year) and independent, self-directed learning. It reflects a growing focus on quantitative finance, statistical modeling, and machine learning.
+This project combines a personal interest in investing and quantitative analysis with statistics, probability theory, and Python skills built through a mix of formal coursework (Business Analytics degree, VU Amsterdam, currently in the second year) and independent, self directed learning. It reflects a growing focus on quantitative finance, statistical modeling, and machine learning.
 
-Rather than using a generic dataset, the analysis is built on real holdings, so every metric and chart reflects an actual investment decision.
+Rather than using a generic dataset, the analysis is built on real holdings, so every metric and chart reflects an actual investment decision
 
 ---
 
