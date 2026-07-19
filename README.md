@@ -49,7 +49,7 @@ pip install -r requirements.txt
 ### 3. Open the notebook
 Open `portfolio.ipynb` in VS Code or Jupyter and run all cells.
 
-No API keys or live downloads are required — the notebook loads directly from the frozen CSV snapshots in `data/`, so results are identical for every user, every time (see [Data & Reproducibility](#data--reproducibility)).
+No API keys or live downloads are required, the notebook loads directly from the frozen CSV snapshots in `data/` so results are identical for every user every time (see [Data & Reproducibility](#data--reproducibility)).
 
 ---
 
