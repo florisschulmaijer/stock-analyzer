@@ -25,7 +25,7 @@ stock-analyzer/
 │   └── spcx_data.csv           # Frozen price snapshot (SpaceX, since IPO)
 ├── portfolio.ipynb             # Main analysis notebook
 ├── watchlist.ipynb             # Analysis of stocks not yet owned
-├── dashboard.py                      # Interactive Streamlit dashboard
+├── dashboard.py                # Interactive Streamlit dashboard
 ├── requirements.txt
 ├── README.md
 └── .gitignore
