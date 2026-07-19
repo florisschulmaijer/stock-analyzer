@@ -6,13 +6,15 @@ Personal exploratory and statistical analysis of a real stock portfolio. Coverin
 
 **Data snapshot:** July 6, 2026
 
+**Status:** In progress, sections marked **PLANNED** below are not yet built
+
 ---
 
 ## About This Project
 
 This project combines a personal interest in investing and quantitative analysis with statistics, probability theory, and Python skills built through a mix of formal coursework (Business Analytics degree, VU Amsterdam, currently in the second year) and independent, self directed learning. It reflects a growing focus on quantitative finance, statistical modeling, and machine learning.
 
-Rather than using a generic dataset, the analysis is built on real holdings, so every metric and chart reflects an actual investment decision
+Rather than using a generic dataset, the analysis is built on real holdings so every metric and chart reflects an actual investment decision.
 
 ---
 
@@ -24,8 +26,8 @@ stock-analyzer/
 │   ├── portfolio_data.csv      # Frozen price snapshot (main portfolio)
 │   └── spcx_data.csv           # Frozen price snapshot (SpaceX, since IPO)
 ├── portfolio.ipynb             # Main analysis notebook
-├── watchlist.ipynb             # Analysis of stocks not yet owned
-├── dashboard.py                # Interactive Streamlit dashboard
+├── watchlist.ipynb             # Analysis of stocks not yet owned - PLANNED
+├── dashboard.py                # Interactive Streamlit dashboard - PLANNED
 ├── requirements.txt
 ├── README.md
 └── .gitignore
@@ -55,33 +57,32 @@ No API keys or live downloads are required, the notebook loads directly from the
 
 ## What's Inside — Notebook Structure
 
-**1. Data Import**
-Historical daily closing prices loaded from a frozen snapshot.
+**1. Data Import** 
 
-**2. Exploratory Analysis**
+**2. Exploratory Analysis** 
 - 2.1 Raw Stock Prices
-- 2.1.1 SpaceX — Since IPO
+- 2.1.1 SpaceX - Since IPO
 - 2.2 Relative Growth
 - 2.3 Daily Returns
 - 2.4 Moving Averages (20-day / 50-day, Golden Cross / Death Cross)
 - 2.5 Return Distribution (histogram + KDE)
 
 **3. Risk & Performance Metrics**
-- 3.1 Volatility (annualized standard deviation)
-- 3.2 Sharpe Ratio (risk-adjusted return)
-- ⬜ 3.3 Maximum Drawdown
-- ⬜ 3.4 Skewness & Kurtosis
-- ⬜ 3.5 Correlation Matrix
-- ⬜ 3.6 Beta vs Market (S&P 500)
+- 3.1 Volatility (annualized standard deviation) 
+- 3.2 Sharpe Ratio (risk-adjusted return) 
+- 3.3 Maximum Drawdown - **PLANNED**
+- 3.4 Skewness & Kurtosis - **PLANNED**
+- 3.5 Correlation Matrix - **PLANNED**
+- 3.6 Beta vs Market (S&P 500) - **PLANNED**
 
-**4. Bootstrap Analysis** ⬜
-Resampling based confidence interval for mean return.
+**4. Bootstrap Analysis** - **PLANNED**
+- Resampling based confidence interval for mean return.
 
-**5. Portfolio Overview** ⬜
-Combines real dollar-weighted holdings with covariance-based portfolio risk.
+**5. Portfolio Overview** - **PLANNED**
+- Combines real dollar weighted holdings with covariance based portfolio risk.
 
-**6. Predictive Modelling** ⬜ *(optional, advanced)*
-A simple sklearn Ridge regression pipeline predicting next day return from lagged features. An educational exercise, explicitly not a reliable trading signal.
+**6. Predictive Modelling** - **PLANNED**
+- A simple sklearn Ridge regression pipeline predicting next day return from lagged features.
 
 ---
 
@@ -103,21 +104,8 @@ Stock data is downloaded once via [`yfinance`](https://pypi.org/project/yfinance
 | `pandas` | Data manipulation |
 | `matplotlib` | Static visualizations |
 | Jupyter Notebook | Main analysis environment |
-| Streamlit | Interactive dashboard |
-| VADER + NewsAPI | News sentiment analysis |
-
----
-
-## Roadmap
-
-**Dashboard (`dashboard.py`) — planned, separate from the notebook:**
-- Free ticker input (any stock, not just current holdings)
-- Monte Carlo simulation / Efficient Frontier
-- Rolling Sharpe Ratio & Rolling Volatility
-- Value at Risk (VaR) with adjustable confidence slider
-- News sentiment (Yahoo Finance headlines + VADER)
-
-Unlike the notebook, the dashboard always fetches live data. Reproducibility only applies to the static analysis above.
+| Streamlit | Interactive dashboard - **PLANNED** |
+| VADER + NewsAPI | News sentiment analysis - **PLANNED** |
 
 ---
 
@@ -128,7 +116,7 @@ Unlike the notebook, the dashboard always fetches live data. Reproducibility onl
 | Statistics | Descriptive statistics, confidence intervals (basis for Section 4 bootstrap) |
 | Stochastic Modelling | Daily returns treated as an independent stochastic process |
 | Statistical Data Analysis | KDE, bootstrap resampling, skewness/kurtosis, correlation matrix |
-| Probability Theory | Binomial distributions, covariance/regression (beta) |
+| Probability Theory | Binomial distributions, covariance/regression |
 | Project Big Data | sklearn Pipeline, Ridge regression, cross-validation |
 | Data Engineering | Streamlit dashboard build skills |
 
@@ -136,4 +124,4 @@ Unlike the notebook, the dashboard always fetches live data. Reproducibility onl
 
 ## Disclaimer
 
-This project is for educational purposes only. Nothing here constitutes financial advice. All analysis reflects a personal learning exercise, not a recommendation to buy or sell any security.
+This project is for educational purposes only.
