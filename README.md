@@ -119,10 +119,16 @@ Completed:
 - [x] Volatility and Sharpe ratio
 
 Planned:
-- [ ] Maximum drawdown, skewness and kurtosis
-- [ ] Correlation matrix and beta versus the S&P 500
-- [ ] Bootstrap confidence intervals for mean returns
-- [ ] Portfolio-level risk using actual position weights and the covariance matrix
+- [ ] Maximum drawdown
+- [ ] Skewness and kurtosis
+- [ ] Correlation matrix
+- [ ] Beta versus the market (S&P 500)
+- [ ] Bootstrap analysis: resampling-based confidence interval for the mean return
+- [ ] Portfolio overview: real dollar-weighted holdings with covariance-based portfolio risk
+- [ ] Predictive modelling: scikit-learn Ridge regression pipeline predicting next-day returns from lagged features
+- [ ] Watchlist notebook: the same analysis for stocks not yet owned
+- [ ] Interactive Streamlit dashboard
+- [ ] News sentiment analysis (VADER + NewsAPI)
 
 ---
 
