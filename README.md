@@ -1,20 +1,34 @@
 # Stock Portfolio Analysis
 
-Personal exploratory and statistical analysis of a real stock portfolio. Covering price behavior, risk metrics, and portfolio-level performance using Python.
+Exploratory and statistical analysis of a real stock portfolio in Python, covering price behaviour, return distributions and risk-adjusted performance.
 
 **Author:** Floris Schulmaijer
-
-**Data snapshot:** July 6, 2026
-
-**Status:** In progress, sections marked **PLANNED** below are not yet built
+**Data snapshot:** July 6, 2026 (one year of daily closing prices)
 
 ---
 
 ## About This Project
 
-This project combines a personal interest in investing and quantitative analysis with statistics, probability theory, and Python skills built through a mix of formal coursework (Business Analytics degree, VU Amsterdam, currently in the second year) and independent, self directed learning. It reflects a growing focus on quantitative finance, statistical modeling, and machine learning.
+This project combines a personal interest in investing with the statistics, probability theory and Python skills from my Business Analytics degree at VU Amsterdam. Rather than using a generic dataset, the analysis is built on real holdings, so every metric and chart reflects an actual investment decision.
 
-Rather than using a generic dataset, the analysis is built on real holdings so every metric and chart reflects an actual investment decision.
+---
+
+## Key Results
+
+Annualised volatility and Sharpe ratio per stock (risk-free rate: 4% per year):
+
+| Stock | Annualised volatility | Sharpe ratio |
+|---|---|---|
+| GOOGL | 29.9% | 2.47 |
+| AMD | 68.5% | 2.37 |
+| AEHR | 121.8% | 1.90 |
+| PLAB | 83.8% | 0.87 |
+| NVDA | 35.3% | 0.68 |
+| SOUN | 80.4% | -0.29 |
+
+- **AEHR** had by far the highest return (over 700%), but also the highest volatility, so its risk-adjusted performance ranks below GOOGL and AMD.
+- **GOOGL** was the least volatile stock and delivered the best return per unit of risk.
+- **SOUN** is the only stock with a negative Sharpe ratio: it underperformed the risk-free rate.
 
 ---
 
@@ -25,9 +39,7 @@ stock-analyzer/
 ├── data/
 │   ├── portfolio_data.csv      # Frozen price snapshot (main portfolio)
 │   └── spcx_data.csv           # Frozen price snapshot (SpaceX, since IPO)
-├── portfolio.ipynb             # Main analysis notebook
-├── watchlist.ipynb             # Analysis of stocks not yet owned - PLANNED
-├── dashboard.py                # Interactive Streamlit dashboard - PLANNED
+├── portfolio.ipynb             # Analysis notebook
 ├── requirements.txt
 ├── README.md
 └── .gitignore
@@ -37,62 +49,42 @@ stock-analyzer/
 
 ## Getting Started
 
-### 1. Clone the repository
 ```bash
 git clone https://github.com/florisschulmaijer/stock-analyzer.git
 cd stock-analyzer
-```
-
-### 2. Install dependencies
-```bash
 pip install -r requirements.txt
 ```
 
-### 3. Open the notebook
-Open `portfolio.ipynb` in VS Code or Jupyter and run all cells.
+Then open `portfolio.ipynb` in VS Code or Jupyter and run all cells.
 
-No API keys or live downloads are required, the notebook loads directly from the frozen CSV snapshots in `data/` so results are identical for every user every time (see [Data & Reproducibility](#data--reproducibility)).
+No API keys or live downloads are needed: the notebook loads the frozen CSV snapshots in `data/`, so results are identical for every user every time (see [Data & Reproducibility](#data--reproducibility)).
 
 ---
 
-## What's Inside — Notebook Structure
+## Notebook Structure
 
-**1. Data Import** 
+**1. Data Import**
 
-**2. Exploratory Analysis** 
-- 2.1 Raw Stock Prices
-- 2.1.1 SpaceX - Since IPO
-- 2.2 Relative Growth
-- 2.3 Daily Returns
-- 2.4 Moving Averages (20-day / 50-day, Golden Cross / Death Cross)
-- 2.5 Return Distribution (histogram + KDE)
+**2. Exploratory Analysis**
+- 2.1 Raw stock prices (and 2.1.1 SpaceX since IPO)
+- 2.2 Relative growth
+- 2.3 Daily returns
+- 2.4 Moving averages (20-day / 50-day, Golden Cross / Death Cross)
+- 2.5 Return distribution (histogram + KDE)
 
 **3. Risk & Performance Metrics**
-- 3.1 Volatility (annualized standard deviation) 
-- 3.2 Sharpe Ratio (risk-adjusted return) 
-- 3.3 Maximum Drawdown - **PLANNED**
-- 3.4 Skewness & Kurtosis - **PLANNED**
-- 3.5 Correlation Matrix - **PLANNED**
-- 3.6 Beta vs Market (S&P 500) - **PLANNED**
-
-**4. Bootstrap Analysis** - **PLANNED**
-- Resampling based confidence interval for mean return.
-
-**5. Portfolio Overview** - **PLANNED**
-- Combines real dollar weighted holdings with covariance based portfolio risk.
-
-**6. Predictive Modelling** - **PLANNED**
-- A simple sklearn Ridge regression pipeline predicting next day return from lagged features.
+- 3.1 Volatility (annualised standard deviation of daily returns)
+- 3.2 Sharpe ratio (risk-adjusted return)
 
 ---
 
 ## Data & Reproducibility
 
-Stock data is downloaded once via [`yfinance`](https://pypi.org/project/yfinance/) and saved as a CSV snapshot in `data/`. The notebook always loads from that frozen file instead of re-downloading live prices, so:
+Price data was downloaded once via [`yfinance`](https://pypi.org/project/yfinance/) and saved as CSV snapshots in `data/`. The notebook always loads these frozen files instead of re-downloading live prices, so:
 
-- Results and written interpretations stay consistent no matter when the notebook is run
-- Anyone cloning the repo gets identical output, immediately, without needing an internet connection
-- The (commented-out) download code remains in the notebook purely as documentation of how the snapshot was created and how to refresh it
+- results and written interpretations stay consistent no matter when the notebook is run;
+- anyone cloning the repo gets identical output without an internet connection;
+- the (commented-out) download code stays in the notebook as documentation of how the snapshot was created and how to refresh it.
 
 ---
 
@@ -100,12 +92,11 @@ Stock data is downloaded once via [`yfinance`](https://pypi.org/project/yfinance
 
 | Tool | Purpose |
 |---|---|
-| `yfinance` | Historical stock price data |
-| `pandas` | Data manipulation |
-| `matplotlib` | Static visualizations |
-| Jupyter Notebook | Main analysis environment |
-| Streamlit | Interactive dashboard - **PLANNED** |
-| VADER + NewsAPI | News sentiment analysis - **PLANNED** |
+| `yfinance` | Historical stock price data (snapshot creation) |
+| `pandas` | Data manipulation and statistics |
+| `matplotlib` | Visualisations |
+| `scipy` | Kernel density estimates |
+| Jupyter Notebook | Analysis environment |
 
 ---
 
@@ -113,15 +104,22 @@ Stock data is downloaded once via [`yfinance`](https://pypi.org/project/yfinance
 
 | Course | Concepts applied here |
 |---|---|
-| Statistics | Descriptive statistics, confidence intervals (basis for Section 4 bootstrap) |
-| Stochastic Modelling | Daily returns treated as an independent stochastic process |
-| Statistical Data Analysis | KDE, bootstrap resampling, skewness/kurtosis, correlation matrix |
-| Probability Theory | Binomial distributions, covariance/regression |
-| Project Big Data | sklearn Pipeline, Ridge regression, cross-validation |
-| Data Engineering | Streamlit dashboard build skills |
+| Statistics | Descriptive statistics, sample standard deviation |
+| Statistical Data Analysis | Kernel density estimation, distribution shape, fat tails |
+| Stochastic Modelling | Daily returns as a stochastic process |
+| Probability Theory | Return distributions, normal distribution as benchmark |
+
+---
+
+## Possible Extensions
+
+- Maximum drawdown, skewness and kurtosis
+- Correlation matrix and beta versus the S&P 500
+- Bootstrap confidence intervals for mean returns
+- Portfolio-level risk using actual position weights and the covariance matrix
 
 ---
 
 ## Disclaimer
 
-This project is for educational purposes only.
+This project is for educational purposes only and is not investment advice.
