@@ -111,12 +111,18 @@ Price data was downloaded once via [`yfinance`](https://pypi.org/project/yfinanc
 
 ---
 
-## Possible Extensions
+## Roadmap
 
-- Maximum drawdown, skewness and kurtosis
-- Correlation matrix and beta versus the S&P 500
-- Bootstrap confidence intervals for mean returns
-- Portfolio-level risk using actual position weights and the covariance matrix
+Completed:
+- [x] Data import with frozen, reproducible snapshots
+- [x] Exploratory analysis: prices, relative growth, daily returns, moving averages, return distributions
+- [x] Volatility and Sharpe ratio
+
+Planned:
+- [ ] Maximum drawdown, skewness and kurtosis
+- [ ] Correlation matrix and beta versus the S&P 500
+- [ ] Bootstrap confidence intervals for mean returns
+- [ ] Portfolio-level risk using actual position weights and the covariance matrix
 
 ---
 
