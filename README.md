@@ -130,9 +130,3 @@ Planned:
 - [ ] Watchlist notebook: the same analysis for stocks not yet owned
 - [ ] Interactive Streamlit dashboard
 - [ ] News sentiment analysis (VADER + NewsAPI)
-
----
-
-## Disclaimer
-
-This project is for educational purposes only and is not investment advice.
