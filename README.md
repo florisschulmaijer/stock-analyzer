@@ -3,6 +3,7 @@
 Exploratory and statistical analysis of a real stock portfolio in Python, covering price behaviour, return distributions and risk-adjusted performance.
 
 **Author:** Floris Schulmaijer
+
 **Data snapshot:** July 6, 2026 (one year of daily closing prices)
 
 ---
